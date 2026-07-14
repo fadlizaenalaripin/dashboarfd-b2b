@@ -7,7 +7,9 @@
   <title>B2B Dashboard - Batik Trusmi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <script>
     /*!
      * Chart.js v4.4.4
@@ -834,6 +836,107 @@
       border-left: 4px solid var(--amber);
     }
 
+    .sla-rose {
+      border-left: 4px solid #f43f5e;
+    }
+
+    .complaint-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .complaint-item:hover {
+      background: #fff5f5;
+      border-color: #fca5a5;
+      transform: translateX(3px);
+    }
+
+    .complaint-badge {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    .cb-unresolved {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+
+    .cb-resolved {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    /* Accordion Styles */
+    .accordion-header {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 120px 220px 1fr 120px 30px;
+      align-items: center;
+      font-size: 13px;
+      transition: all 0.2s ease;
+    }
+
+    .accordion-header:hover {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+    }
+
+    .accordion-header.active {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      margin-bottom: 0;
+      background: #f1f5f9;
+    }
+
+    .accordion-arrow {
+      font-size: 12px;
+      transition: transform 0.2s ease;
+      display: inline-block;
+      text-align: center;
+      color: var(--text-mid);
+    }
+
+    .accordion-panel {
+      display: none;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: none;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      padding: 20px;
+      margin-bottom: 8px;
+      animation: slideDown 0.25s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .sla-icon {
       width: 34px;
       height: 34px;
@@ -922,36 +1025,93 @@
 
     /* Keyframes */
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     @keyframes fadeInLeft {
-      from { opacity: 0; transform: translateX(-24px); }
-      to   { opacity: 1; transform: translateX(0); }
+      from {
+        opacity: 0;
+        transform: translateX(-24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
+
     @keyframes fadeInRight {
-      from { opacity: 0; transform: translateX(24px); }
-      to   { opacity: 1; transform: translateX(0); }
+      from {
+        opacity: 0;
+        transform: translateX(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
+
     @keyframes scaleIn {
-      from { opacity: 0; transform: scale(0.92); }
-      to   { opacity: 1; transform: scale(1); }
+      from {
+        opacity: 0;
+        transform: scale(0.92);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
+
     @keyframes shimmer {
-      0%   { background-position: -400px 0; }
-      100% { background-position: 400px 0; }
+      0% {
+        background-position: -400px 0;
+      }
+
+      100% {
+        background-position: 400px 0;
+      }
     }
+
     @keyframes pulseRing {
-      0%   { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.35); }
-      70%  { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.35);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+      }
     }
+
     @keyframes floatY {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-6px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
     }
+
     @keyframes progressGrow {
-      from { width: 0; }
+      from {
+        width: 0;
+      }
     }
 
     /* Scroll-reveal base states – invisible by default */
@@ -959,14 +1119,17 @@
       opacity: 0;
       transform: translateY(28px);
       transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-                  transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     }
+
     .reveal.reveal-left {
       transform: translateX(-24px);
     }
+
     .reveal.reveal-right {
       transform: translateX(24px);
     }
+
     .reveal.reveal-scale {
       transform: scale(0.92);
     }
@@ -978,19 +1141,38 @@
     }
 
     /* Staggered children */
-    .stagger-children > * {
+    .stagger-children>* {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-                  transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .stagger-children.is-visible > *:nth-child(1)  { transition-delay: 0.05s; }
-    .stagger-children.is-visible > *:nth-child(2)  { transition-delay: 0.12s; }
-    .stagger-children.is-visible > *:nth-child(3)  { transition-delay: 0.19s; }
-    .stagger-children.is-visible > *:nth-child(4)  { transition-delay: 0.26s; }
-    .stagger-children.is-visible > *:nth-child(5)  { transition-delay: 0.33s; }
-    .stagger-children.is-visible > *:nth-child(6)  { transition-delay: 0.40s; }
-    .stagger-children.is-visible > * {
+
+    .stagger-children.is-visible>*:nth-child(1) {
+      transition-delay: 0.05s;
+    }
+
+    .stagger-children.is-visible>*:nth-child(2) {
+      transition-delay: 0.12s;
+    }
+
+    .stagger-children.is-visible>*:nth-child(3) {
+      transition-delay: 0.19s;
+    }
+
+    .stagger-children.is-visible>*:nth-child(4) {
+      transition-delay: 0.26s;
+    }
+
+    .stagger-children.is-visible>*:nth-child(5) {
+      transition-delay: 0.33s;
+    }
+
+    .stagger-children.is-visible>*:nth-child(6) {
+      transition-delay: 0.40s;
+    }
+
+    .stagger-children.is-visible>* {
       opacity: 1;
       transform: none;
     }
@@ -998,12 +1180,14 @@
     /* Enhanced stat-card hover */
     .stat-card {
       transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-                  box-shadow 0.35s ease !important;
+        box-shadow 0.35s ease !important;
     }
+
     .stat-card:hover {
       transform: translateY(-6px) scale(1.02) !important;
       box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
     }
+
     .stat-card:active {
       transform: translateY(-2px) scale(0.99) !important;
     }
@@ -1012,6 +1196,7 @@
     .card {
       transition: box-shadow 0.3s ease, transform 0.3s ease !important;
     }
+
     .card:hover {
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.09) !important;
       transform: translateY(-2px) !important;
@@ -1021,6 +1206,7 @@
     tbody tr {
       transition: background 0.2s ease, transform 0.2s ease !important;
     }
+
     tbody tr:hover {
       background: #f0f7ff !important;
       transform: translateX(3px) !important;
@@ -1030,6 +1216,7 @@
     .progress-fill {
       animation: progressGrow 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
+
     .progress-fill-track {
       animation: progressGrow 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
@@ -1038,9 +1225,11 @@
     .filter-row button {
       transition: background 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
     }
+
     .filter-row button:hover {
       transform: scale(1.08) !important;
     }
+
     .filter-row button:active {
       transform: scale(0.95) !important;
     }
@@ -1051,6 +1240,7 @@
       overflow: hidden;
       transition: color 0.2s ease !important;
     }
+
     nav.subnav .item::after {
       content: '';
       position: absolute;
@@ -1060,9 +1250,10 @@
       height: 3px;
       background: var(--blue);
       transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-                  left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
       border-radius: 3px 3px 0 0;
     }
+
     nav.subnav .item:hover::after,
     nav.subnav .item.active::after {
       width: 100%;
@@ -1073,6 +1264,7 @@
     .brand .bt-badge {
       transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
     }
+
     .topbar-left:hover .bt-badge {
       transform: rotate(-8deg) scale(1.1);
     }
@@ -1080,15 +1272,18 @@
     /* Modal enhanced animation */
     .modal-content {
       transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-                  opacity 0.3s ease !important;
+        opacity 0.3s ease !important;
     }
+
     .modal-overlay {
       transition: opacity 0.3s ease !important;
     }
+
     .modal-close-btn {
       transition: background 0.2s ease, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
-                  color 0.2s ease !important;
+        color 0.2s ease !important;
     }
+
     .modal-close-btn:hover {
       transform: rotate(90deg) scale(1.1) !important;
     }
@@ -1116,10 +1311,14 @@
 
     /* --- Tablet Landscape / Small Desktop ≤ 1280px --- */
     @media (max-width: 1280px) {
-      main { padding: 18px; }
+      main {
+        padding: 18px;
+      }
+
       .summary-grid {
         grid-template-columns: repeat(4, 1fr);
       }
+
       .row-top {
         grid-template-columns: 1.4fr 2.6fr;
       }
@@ -1127,90 +1326,183 @@
 
     /* --- Tablet Portrait ≤ 1024px --- */
     @media (max-width: 1024px) {
-      main { padding: 16px; }
+      main {
+        padding: 16px;
+      }
+
       .summary-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
       }
+
       .row-top {
         grid-template-columns: 1fr;
       }
+
       .right-grid {
         grid-template-columns: 1fr 1fr;
       }
+
       .row-two {
         grid-template-columns: 1fr;
       }
+
       .sla-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .page-title { font-size: 22px; }
+
+      .page-title {
+        font-size: 22px;
+      }
     }
 
     /* --- Large Mobile ≤ 768px --- */
     @media (max-width: 768px) {
-      main { padding: 12px; }
+      main {
+        padding: 12px;
+      }
+
       .summary-grid {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
       }
+
       .right-grid {
         grid-template-columns: 1fr;
       }
+
       .mini-stats {
         grid-template-columns: 1fr 1fr;
       }
+
       .filter-box {
         align-items: flex-start;
         width: 100%;
       }
+
       .filter-row {
         width: 100%;
       }
+
       .filter-row input {
         width: 100%;
         flex: 1;
       }
+
       .page-head {
         flex-direction: column;
         gap: 12px;
       }
-      .page-title { font-size: 20px; }
-      .card { padding: 14px 14px !important; }
+
+      .page-title {
+        font-size: 20px;
+      }
+
+      .card {
+        padding: 14px 14px !important;
+      }
+
       .row-two {
         grid-template-columns: 1fr;
       }
+
       .sla-grid {
         grid-template-columns: 1fr;
       }
-      table { font-size: 12.5px; }
-      thead th { font-size: 10.5px; padding: 8px 4px; }
-      tbody td { padding: 9px 4px; }
-      .stat-value { font-size: 22px !important; }
+
+      table {
+        font-size: 12.5px;
+      }
+
+      thead th {
+        font-size: 10.5px;
+        padding: 8px 4px;
+      }
+
+      tbody td {
+        padding: 9px 4px;
+      }
+
+      .stat-value {
+        font-size: 22px !important;
+      }
     }
 
     /* --- Small Mobile ≤ 480px --- */
     @media (max-width: 480px) {
-      main { padding: 8px; }
+      main {
+        padding: 8px;
+      }
+
       .summary-grid {
         grid-template-columns: 1fr;
         gap: 8px;
       }
-      .page-title { font-size: 18px; }
-      header.topbar { padding: 12px 14px; }
-      nav.subnav { padding: 0 10px; }
-      nav.subnav .item { padding: 10px 10px; font-size: 13px; }
-      .stat-card { padding: 14px 14px; }
-      .stat-value { font-size: 20px !important; }
-      .card-title { font-size: 12px !important; }
-      .mini-stats { grid-template-columns: 1fr; }
-      table { font-size: 11.5px; }
-      thead th { font-size: 10px; padding: 6px 3px; }
-      tbody td { padding: 8px 3px; }
-      .pager button { width: 26px; height: 26px; font-size: 12px; }
-      .modal-content { width: 98% !important; max-height: 95vh !important; }
-      .modal-body { padding: 14px !important; }
-      .modal-header { padding: 14px 16px !important; }
+
+      .page-title {
+        font-size: 18px;
+      }
+
+      header.topbar {
+        padding: 12px 14px;
+      }
+
+      nav.subnav {
+        padding: 0 10px;
+      }
+
+      nav.subnav .item {
+        padding: 10px 10px;
+        font-size: 13px;
+      }
+
+      .stat-card {
+        padding: 14px 14px;
+      }
+
+      .stat-value {
+        font-size: 20px !important;
+      }
+
+      .card-title {
+        font-size: 12px !important;
+      }
+
+      .mini-stats {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        font-size: 11.5px;
+      }
+
+      thead th {
+        font-size: 10px;
+        padding: 6px 3px;
+      }
+
+      tbody td {
+        padding: 8px 3px;
+      }
+
+      .pager button {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+      }
+
+      .modal-content {
+        width: 98% !important;
+        max-height: 95vh !important;
+      }
+
+      .modal-body {
+        padding: 14px !important;
+      }
+
+      .modal-header {
+        padding: 14px 16px !important;
+      }
     }
 
     /* GLOBAL HOVER TOOLTIP */
@@ -1446,7 +1738,8 @@
         </div>
         <div class="stat-value v-blue">21</div>
       </div>
-      <div class="stat-card" data-tip data-title="Nilai Deal" data-sub="Total nilai transaksi yang sudah deal: Rp 150.262.600" data-detail="nilai_deal">
+      <div class="stat-card" data-tip data-title="Nilai Deal"
+        data-sub="Total nilai transaksi yang sudah deal: Rp 150.262.600" data-detail="nilai_deal">
         <div class="stat-top">
           <div class="stat-icon c-teal">💲</div>
           <div class="stat-label">Nilai Deal</div>
@@ -1461,7 +1754,8 @@
         </div>
         <div class="stat-value v-green">52.38%</div>
       </div>
-      <div class="stat-card" data-tip data-title="Lost Sales" data-sub="Total nilai lost sales: Rp 73.495.000 (3 leads)" data-detail="lost_sales">
+      <div class="stat-card" data-tip data-title="Lost Sales" data-sub="Total nilai lost sales: Rp 73.495.000 (3 leads)"
+        data-detail="lost_sales">
         <div class="stat-top">
           <div class="stat-icon c-red">⛔</div>
           <div class="stat-label">Lost Sales</div>
@@ -1477,14 +1771,17 @@
           <div class="card-title">🔻 PERFORMANCE SALES FUNNEL</div>
           <div class="help-dot">?</div>
         </div>
-        <div class="funnel-bar fw-100" data-tip data-title="Leads Masuk" data-sub="21 leads (100% dari total awal)" data-detail="funnel_leads">
+        <div class="funnel-bar fw-100" data-tip data-title="Leads Masuk" data-sub="21 leads (100% dari total awal)"
+          data-detail="funnel_leads">
           Leads Masuk: 21</div>
         <div class="funnel-bar fw-92" data-tip data-title="Contacted"
           data-sub="5 leads sudah dihubungi (23.8% dari total leads)" data-detail="funnel_contacted">Contacted: 5</div>
         <div class="funnel-bar fw-84" data-tip data-title="Quotation Sent"
-          data-sub="0 penawaran harga terkirim (0% dari total leads)" data-detail="funnel_quotation">Quotation Sent: 0</div>
+          data-sub="0 penawaran harga terkirim (0% dari total leads)" data-detail="funnel_quotation">Quotation Sent: 0
+        </div>
         <div class="funnel-bar fw-76" data-tip data-title="Negotiation"
-          data-sub="0 leads dalam tahap negosiasi (0% dari total leads)" data-detail="funnel_negotiation">Negotiation: 0</div>
+          data-sub="0 leads dalam tahap negosiasi (0% dari total leads)" data-detail="funnel_negotiation">Negotiation: 0
+        </div>
         <div class="funnel-bar fw-68" data-tip data-title="Deal"
           data-sub="4 leads berhasil closing (19% dari total leads)" data-detail="funnel_deal">Deal: 4</div>
         <div class="funnel-bar fw-60" data-tip data-title="Lost"
@@ -1526,13 +1823,13 @@
           <div>
             <div class="target-main-value" style="color:var(--teal)">Rp 480.000.000</div>
           </div>
-          
+
           <div class="target-breakdown">
             <div class="breakdown-item">
               <span class="label">Gap to Target:</span>
               <span class="value" style="color:var(--red)">Rp 329.737.400</span>
             </div>
-            
+
             <div class="progress-container">
               <div class="progress-lbl">Pencapaian target: 31.30%</div>
               <div class="progress-bar-bg">
@@ -1670,16 +1967,25 @@
         </div>
         <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
           <input class="search-box" placeholder="🔍 Cari Project B2B..." />
-          <button id="btnLihatSemuaProject" onclick="openAllProjectsModal()" style="background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;transition:opacity .2s;" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+          <button id="btnLihatSemuaProject" onclick="openAllProjectsModal()"
+            style="background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;transition:opacity .2s;"
+            onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
             📋 Lihat Semua 34 Project
           </button>
         </div>
       </div>
-      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin: 0 16px 16px 16px;background:#f8fafc;padding:10px 14px;border-radius:8px;border:1px solid var(--border);">
+      <div
+        style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin: 0 16px 16px 16px;background:#f8fafc;padding:10px 14px;border-radius:8px;border:1px solid var(--border);">
         <span style="font-size:12px;font-weight:700;color:var(--text-dark);">Sort / Urutkan:</span>
-        <button id="sortDueBtn" onclick="sortMonitor('due')" style="background:#fff;border:1px solid var(--border);padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;display:flex;align-items:center;gap:4px;transition:all 0.15s;">📅 Due Date <span id="sortDueIcon">↕</span></button>
-        <button id="sortJenisBtn" onclick="sortMonitor('jenis')" style="background:#fff;border:1px solid var(--border);padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;display:flex;align-items:center;gap:4px;transition:all 0.15s;">🏷️ Jenis PO <span id="sortJenisIcon">↕</span></button>
-        <button id="sortPurchBtn" onclick="sortMonitor('purch')" style="background:#fff;border:1px solid var(--border);padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;display:flex;align-items:center;gap:4px;transition:all 0.15s;">👤 PIC Purchasing <span id="sortPurchIcon">↕</span></button>
+        <button id="sortDueBtn" onclick="sortMonitor('due')"
+          style="background:#fff;border:1px solid var(--border);padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;display:flex;align-items:center;gap:4px;transition:all 0.15s;">📅
+          Due Date <span id="sortDueIcon">↕</span></button>
+        <button id="sortJenisBtn" onclick="sortMonitor('jenis')"
+          style="background:#fff;border:1px solid var(--border);padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;display:flex;align-items:center;gap:4px;transition:all 0.15s;">🏷️
+          Jenis PO <span id="sortJenisIcon">↕</span></button>
+        <button id="sortPurchBtn" onclick="sortMonitor('purch')"
+          style="background:#fff;border:1px solid var(--border);padding:6px 12px;border-radius:6px;font-size:12px;cursor:pointer;font-weight:600;display:flex;align-items:center;gap:4px;transition:all 0.15s;">👤
+          PIC Purchasing <span id="sortPurchIcon">↕</span></button>
       </div>
       <div style="overflow-x:auto;">
         <table>
@@ -1715,32 +2021,49 @@
     <!-- SLA -->
     <div class="sla-grid">
       <div class="sla-card sla-blue" data-tip data-title="Production SLA"
-        data-sub="0% project produksi selesai tepat waktu. 0 project terlambat." data-detail="sla_production">
-        <div class="sla-ring"><canvas id="prodRing"></canvas>
-          <div class="sla-ring-label">0%</div>
+        data-sub="6% tingkat kendala waktu &amp; mutu produksi (2 dari 34 project). Klik untuk detail." data-detail="sla_production">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 120px; flex-shrink: 0;">
+          <div class="sla-ring"><canvas id="prodRing"></canvas>
+            <div class="sla-ring-label">6%</div>
+          </div>
+          <div style="font-size: 10.5px; font-weight: 700; color: var(--text-mid); text-align: center; line-height: 1.3; margin-top: 4px;">
+            (2 Project Bermasalah / 34 Total Project B2B)
+          </div>
         </div>
         <div class="sla-info">
           <div class="sla-icon c-blue" style="margin-bottom:6px;">⚙️</div>
           <div class="sla-title">Production SLA</div>
-          <div class="sla-sub" style="margin-bottom:12px;">Ketepatan Waktu Produksi</div>
-          <div class="sla-status-row" style="color:var(--green)">SUMMARY STATUS<br></div>
-          <div style="font-size:14px;font-weight:700;color:var(--green);margin-bottom:10px;">✔ 0 B2B On-Time</div>
-          <div class="sla-late"><span>Terlambat (Late)</span><b>0 Project</b></div>
-          <div class="sla-note">*Berdasarkan perbandingan Realisasi vs Deadline</div>
+          <div class="sla-sub" style="margin-bottom:12px;">Waktu &amp; Mutu Produksi B2B</div>
+          <div style="font-size:12.5px;font-weight:700;color:var(--text-dark);margin-bottom:6px;">Total Bermasalah: 2 Project</div>
+          <div style="font-size:12px;font-weight:700;color:var(--amber);margin-bottom:6px;">⚠️ 1 Project Terlambat (Late)</div>
+          <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:6px;">🚨 2 Project Cacat Mutu (Failed QA)</div>
+          <div class="sla-note">*Berdasarkan standar waktu (due date) &amp; mutu spesifikasi</div>
         </div>
       </div>
-      <div class="sla-card sla-amber" data-tip data-title="Shipping SLA"
-        data-sub="0% project pengiriman tepat waktu. 0 project terlambat." data-detail="sla_shipping">
-        <div class="sla-ring"><canvas id="shipRing"></canvas>
-          <div class="sla-ring-label">0%</div>
+      <div class="sla-card sla-rose" data-tip data-title="Customer Complaint"
+        data-sub="3% tingkat keluhan pelanggan (1 dari 34 project B2B). Klik untuk detail." data-detail="customer_complaints_log">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 120px; flex-shrink: 0;">
+          <div class="sla-ring"><canvas id="complaintRing"></canvas>
+            <div class="sla-ring-label">3%</div>
+          </div>
+          <div style="font-size: 10.5px; font-weight: 700; color: var(--text-mid); text-align: center; line-height: 1.3; margin-top: 4px;">
+            (1 Project Bermasalah / 34 Total Project B2B)
+          </div>
         </div>
-        <div class="sla-info">
-          <div class="sla-icon" style="background:#fef3c7;color:#d97706;margin-bottom:6px;">🚚</div>
-          <div class="sla-title">Shipping SLA</div>
-          <div class="sla-sub" style="margin-bottom:12px;">Efisiensi Pengiriman Barang</div>
-          <div style="font-size:14px;font-weight:700;color:#d97706;margin-bottom:10px;">✔ 0 B2B On-Time</div>
-          <div class="sla-late"><span>Terlambat (Late)</span><b>0 Project</b></div>
-          <div class="sla-note">*Berdasarkan perbandingan Realisasi vs Deadline</div>
+        <div class="sla-info" style="width: 100%;">
+          <div class="sla-icon" style="background:#ffe4e6;color:#e11d48;margin-bottom:6px;">🚨</div>
+          <div class="sla-title">Customer Complaint</div>
+          <div class="sla-sub" style="margin-bottom:12px;">Keluhan &amp; Masalah Pelanggan B2B</div>
+
+          <div style="font-size:13px;font-weight:700;color:var(--text-dark);margin-bottom:8px;">Keluhan Aktif Periode Ini:</div>
+
+          <div class="complaint-item" onclick="openDetailModal('complaint_rsud_koja'); event.stopPropagation();" style="cursor:pointer;">
+            <div style="display:flex;align-items:center;gap:6px;">
+              <span class="complaint-badge cb-unresolved" style="white-space:nowrap;">Hasil Jahit</span>
+              <span style="font-weight:700;color:var(--text-dark);">RSUD Koja</span>
+            </div>
+            <span style="font-size:11px;color:var(--text-mid);font-weight:600;">Detail →</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1829,13 +2152,13 @@
 
     // BD Performance data
     const bdData = [
-      { name: 'Eha Royani',         ach: 90.18, sales: 86575000,  target: 96000000  },
-      { name: 'Khalida Hanum',      ach: 106.14, sales: 61139000, target: 57600000  },
-      { name: 'Vira Berliana Putri',ach: 5.95,  sales: 2000000,  target: 33600000  },
-      { name: 'Era Permeisari',     ach: 0.14,  sales: 548600,   target: 384000000 },
-      { name: 'Agus Tanto',         ach: 0,     sales: 0,        target: 81600000  },
-      { name: 'Yasinta',            ach: 0,     sales: 0,        target: 57600000  },
-      { name: 'Akbar Nurfauzan',    ach: 0,     sales: 0,        target: 33600000  },
+      { name: 'Eha Royani', ach: 90.18, sales: 86575000, target: 96000000 },
+      { name: 'Khalida Hanum', ach: 106.14, sales: 61139000, target: 57600000 },
+      { name: 'Vira Berliana Putri', ach: 5.95, sales: 2000000, target: 33600000 },
+      { name: 'Era Permeisari', ach: 0.14, sales: 548600, target: 384000000 },
+      { name: 'Agus Tanto', ach: 0, sales: 0, target: 81600000 },
+      { name: 'Yasinta', ach: 0, sales: 0, target: 57600000 },
+      { name: 'Akbar Nurfauzan', ach: 0, sales: 0, target: 33600000 },
     ];
     const bdBody = document.getElementById('bdTable');
     bdData.forEach(bd => {
@@ -1899,7 +2222,7 @@
 
       // Filter by search query
       if (query) {
-        dataList = dataList.filter(p => 
+        dataList = dataList.filter(p =>
           p.klien.toLowerCase().includes(query) ||
           p.detail.toLowerCase().includes(query) ||
           p.pic.toLowerCase().includes(query) ||
@@ -1935,7 +2258,7 @@
       // Pagination math
       const totalItems = dataList.length;
       const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
-      
+
       // Safety bounds check
       if (currentMonitorPage > totalPages) {
         currentMonitorPage = totalPages;
@@ -1951,7 +2274,7 @@
       // Update showing text
       const showingSpan = document.getElementById('monitorShowingText');
       if (showingSpan) {
-        showingSpan.innerText = totalItems > 0 
+        showingSpan.innerText = totalItems > 0
           ? `Showing ${startIndex + 1} to ${endIndex} of ${totalItems} entries ${query ? '(filtered)' : ''}`
           : `Showing 0 to 0 of 0 entries ${query ? '(filtered)' : ''}`;
       }
@@ -2020,7 +2343,7 @@
         tr.setAttribute('data-title', `${m.klien} — ${m.sales}`);
         tr.setAttribute('data-sub', `Due Date: ${m.due} | PO: ${m.jenis} | Purchasing: ${m.purchPIC}`);
         tr.addEventListener('click', () => {
-          openProjectDetailModal('B2B-PROJ-' + m.klien.substring(0,3).toUpperCase(), m.klien, pct, m.status);
+          openProjectDetailModal('B2B-PROJ-' + m.klien.substring(0, 3).toUpperCase(), m.klien, pct, m.status);
         });
 
         const isLate = m.status.includes('LATE');
@@ -2180,12 +2503,248 @@
         options: { cutout: '78%', plugins: { legend: { display: false }, tooltip: { enabled: false } }, animation: { animateRotate: true } }
       });
     }
-    makeRing('prodRing', 0, '#2563eb');
-    makeRing('shipRing', 0, '#f59e0b');
+    // Helper function to assign consistent Project IDs dynamically
+    function getProjectID(p, idx) {
+      if (p.klien === 'Alumni Kolese Jesuit' && p.detail.includes('Gold')) return 'B2B2607100001';
+      if (p.klien === 'Alumni Kolese Jesuit' && p.detail.includes('Navy')) return 'B2B2607210001';
+      if (p.klien === 'Sanqua') return 'B2B2607060004';
+      if (p.klien === 'Hotel Classic Jakarta') return 'B2B2606200003';
+      if (p.klien === 'RSUD Koja') return 'B2B2607290001';
+      const code = String(idx + 1).padStart(2, '0');
+      return `B2B2607${code}0001`;
+    }
+
+    // Dynamic Production SLA Engine based on 34 Entries master dataset
+    let prodChartInstance = null;
+    function initProductionSLA() {
+      const TODAY = new Date(2026, 6, 14); // July 14, 2026
+      
+      // Calculate overdue projects dynamically
+      const overdue = allProjectsData.filter(p => {
+        const isDone = p.status.includes('DONE') || p.status.includes('FINISHED') || p.notes.toLowerCase().includes('done dikirim') || p.notes.toLowerCase().includes('done transaksi');
+        if (isDone) return false;
+        if (p.status === 'LATE (MUNDUR)') return true;
+        if (p.due && p.due !== '-') {
+          const parts = p.due.split('/');
+          if (parts.length === 3) {
+            const dueDay = parseInt(parts[0], 10);
+            const dueMonth = parseInt(parts[1], 10) - 1;
+            const dueYear = parseInt(parts[2], 10);
+            const dueDate = new Date(dueYear, dueMonth, dueDay);
+            return dueDate < TODAY;
+          }
+        }
+        return false;
+      });
+
+      // Unique projects with issues (overdue + QA defects)
+      const issueKeys = new Set();
+      overdue.forEach((p, idx) => {
+        issueKeys.add(getProjectID(p, idx));
+      });
+      // QA defects:
+      // 1. Alumni Kolese Jesuit (Batik Cap - Gold) -> B2B2607100001
+      // 2. Alumni Kolese Jesuit (Batik Cap - Navy) -> B2B2607210001
+      issueKeys.add('B2B2607100001');
+      issueKeys.add('B2B2607210001');
+
+      const totalIssues = issueKeys.size;
+      const pct = Math.round((totalIssues / 34) * 100);
+
+      // Update Production SLA Card UI
+      const card = document.querySelector('.sla-card[data-detail="sla_production"]');
+      if (card) {
+        card.setAttribute('data-sub', `${pct}% tingkat kendala waktu &amp; mutu produksi (${totalIssues} dari 34 project). Klik untuk detail.`);
+        const labelEl = card.querySelector('.sla-ring-label');
+        if (labelEl) labelEl.innerText = `${pct}%`;
+
+        const subEl = card.querySelector('div[style*="font-size: 10.5px"]');
+        if (subEl) subEl.innerText = `(${totalIssues} Project Bermasalah / 34 Total Project B2B)`;
+
+        const infoEl = card.querySelector('.sla-info');
+        if (infoEl) {
+          infoEl.innerHTML = `
+            <div class="sla-icon c-blue" style="margin-bottom:6px;">⚙️</div>
+            <div class="sla-title">Production SLA</div>
+            <div class="sla-sub" style="margin-bottom:12px;">Waktu &amp; Mutu Produksi B2B</div>
+            <div style="font-size:12.5px;font-weight:700;color:var(--text-dark);margin-bottom:6px;">Total Bermasalah: ${totalIssues} Project</div>
+            <div style="font-size:12px;font-weight:700;color:var(--amber);margin-bottom:6px;">⚠️ ${overdue.length} Project Terlambat (Late)</div>
+            <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:6px;">🚨 2 Project Cacat Mutu (Failed QA)</div>
+            <div class="sla-note">*Berdasarkan standar waktu (due date) &amp; mutu spesifikasi</div>
+          `;
+        }
+      }
+
+      // Render/Update Doughnut Ring Chart
+      const ctx = document.getElementById('prodRing');
+      if (ctx) {
+        if (prodChartInstance) prodChartInstance.destroy();
+        prodChartInstance = new Chart(ctx, {
+          type: 'doughnut',
+          data: { datasets: [{ data: [pct, 100 - pct], backgroundColor: ['#2563eb', '#eef1f5'], borderWidth: 0 }] },
+          options: { cutout: '78%', plugins: { legend: { display: false }, tooltip: { enabled: false } }, animation: { animateRotate: true } }
+        });
+      }
+
+      // Generate dynamic HTML for detailData.sla_production
+      const timeSlaRows = overdue.map((p, idx) => {
+        const parts = p.due.split('/');
+        let overdueDaysStr = '';
+        if (parts.length === 3) {
+          const dueDay = parseInt(parts[0], 10);
+          const dueMonth = parseInt(parts[1], 10) - 1;
+          const dueYear = parseInt(parts[2], 10);
+          const dueDate = new Date(dueYear, dueMonth, dueDay);
+          const diffTime = Math.abs(TODAY - dueDate);
+          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+          overdueDaysStr = ` (Overdue ${diffDays} Hari)`;
+        }
+        const projID = getProjectID(p, idx);
+        const poType = p.jenis === 'INTERNAL' ? 'INTERNAL' : 'VENDOR LUAR';
+        return `
+          <tr style="background:#fffbeb;" data-po-type="${poType}">
+            <td style="font-family:monospace;font-weight:600;">${projID}</td>
+            <td>${p.klien} (${p.detail})</td>
+            <td>${p.due}</td>
+            <td>— (Belum Selesai)</td>
+            <td><span class="status-badge sb-lost" style="background:#fee2e2;color:#dc2626;">Terlambat${overdueDaysStr}</span></td>
+          </tr>
+        `;
+      }).join('');
+
+      detailData.sla_production = {
+        title: "Log Detail Production SLA (Waktu &amp; Mutu)",
+        html: `
+          <!-- Info Banner Kalkulasi SLA -->
+          <div id="slaCalculationBanner" style="background:#eff6ff; border:1px solid #bfdbfe; color:#1e3a8a; padding:14px 18px; border-radius:8px; font-size:12.5px; margin-bottom:20px; line-height:1.5;">
+            <strong style="font-size:13px; display:block; margin-bottom:8px;">ℹ️ Keterangan Kalkulasi Persentase Kendala (SLA):</strong>
+            Persentase kendala didapatkan dari total B2B project bermasalah dibagi total seluruh B2B project di jenis PO tersebut:
+            
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:10px; margin-top:10px;">
+              <!-- Internal Card -->
+              <div id="cardSlaInternal" style="background:#fff; padding:10px; border-radius:6px; border:1px solid #bfdbfe; transition: all 0.2s;">
+                <div style="font-weight:700; color:#1e40af; font-size:12.5px;">🏢 Internal PO (SLA: 24%)</div>
+                <div style="font-family:monospace; font-weight:700; margin-top:2px; font-size:11px; color:#1e3a8a;">(5 Bermasalah / 21 Total PO) x 100% = 24%</div>
+                <div style="font-size:11px; color:#3b82f6; margin-top:4px;">* 4 Terlambat &amp; 2 Cacat QA</div>
+              </div>
+              
+              <!-- Vendor Luar Card -->
+              <div id="cardSlaVendor" style="background:#fff; padding:10px; border-radius:6px; border:1px solid #bae6fd; transition: all 0.2s;">
+                <div style="font-weight:700; color:#0369a1; font-size:12.5px;">🚢 Vendor Luar PO (SLA: 31%)</div>
+                <div style="font-family:monospace; font-weight:700; margin-top:2px; font-size:11px; color:#0369a1;">(4 Bermasalah / 13 Total PO) x 100% = 31%</div>
+                <div style="font-size:11px; color:#0284c7; margin-top:4px;">* 4 Terlambat &amp; 0 Cacat QA</div>
+              </div>
+              
+              <!-- Total Card -->
+              <div id="cardSlaTotal" style="background:#fff; padding:10px; border-radius:6px; border:1px solid #cbd5e1; transition: all 0.2s; box-shadow: 0 2px 8px rgba(59,130,246,0.15); border-color: #3b82f6; background-color: #eff6ff;">
+                <div style="font-weight:700; color:#334155; font-size:12.5px;">📊 Total Gabungan B2B (SLA: 26%)</div>
+                <div style="font-family:monospace; font-weight:700; margin-top:2px; font-size:11px; color:#334155;">(9 Bermasalah / 34 Total PO) x 100% = 26%</div>
+                <div style="font-size:11px; color:#475569; margin-top:4px;">* 8 Terlambat &amp; 2 Cacat QA</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filter Jenis PO -->
+          <div style="background:#f8fafc; border:1px solid var(--border); padding:10px 14px; border-radius:8px; display:flex; align-items:center; gap:10px; margin-bottom:20px;">
+            <span style="font-weight:700; font-size:12.5px; color:var(--text-dark);">Filter Jenis PO:</span>
+            <select id="poTypeFilter" onchange="filterProductionSLA(this.value)" style="padding:6px 12px; border-radius:6px; border:1px solid var(--border); font-size:12.5px; font-weight:600; background:#fff; cursor:pointer; outline:none; color:var(--text-dark);">
+              <option value="ALL">Semua Jenis PO</option>
+              <option value="INTERNAL">Internal</option>
+              <option value="VENDOR LUAR">Vendor Luar</option>
+            </select>
+          </div>
+
+          <div style="font-weight:700; color:var(--text-dark); margin-bottom:12px; font-size:14px;">1. Ketepatan Waktu Produksi (Time SLA Log)</div>
+          <table class="modal-table" style="margin-bottom:24px;">
+            <thead>
+              <tr>
+                <th>Project ID</th>
+                <th>Klien</th>
+                <th>Target Deadline</th>
+                <th>Tanggal Realisasi</th>
+                <th>Status SLA Waktu</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${timeSlaRows}
+            </tbody>
+          </table>
+
+          <div style="font-weight:700; color:var(--text-dark); margin-bottom:12px; font-size:14px; padding-top:10px; border-top:1px solid var(--border);">2. Kontrol Mutu Pengerjaan (Quality QA Log)</div>
+          <div style="font-size:12px; color:var(--text-mid); margin-bottom:10px;">*Klik baris permasalahan untuk melihat detail penjelasan cacat dan bukti foto</div>
+          <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:16px;">
+            <!-- Header Legend -->
+            <div style="display:grid; grid-template-columns: 120px 220px 1fr 120px 30px; padding: 8px 16px; font-size: 11px; font-weight: 700; color: var(--text-mid); text-transform: uppercase;">
+              <div>Project ID</div>
+              <div>Klien / Pesanan</div>
+              <div>Jenis Masalah Mutu (QA)</div>
+              <div>Status Mutu</div>
+              <div></div>
+            </div>
+
+            <!-- Accordion Item 1 -->
+            <div class="accordion-header" onclick="toggleAccordion(this)" data-po-type="INTERNAL">
+              <div style="font-family:monospace;font-weight:600;">B2B2607100001</div>
+              <div style="font-weight:700;color:#2563eb;">Alumni Kolese Jesuit (Batik Cap - Gold)</div>
+              <div style="color:var(--text-dark);font-size:12.5px;">Pola Motif Mismatch &amp; Pewarnaan Gold Tidak Merata</div>
+              <div><span class="status-badge cb-unresolved" style="font-size:10px;padding:2px 6px;width:100%;text-align:center;">Gagal QA</span></div>
+              <div class="accordion-arrow">▶</div>
+            </div>
+            <div class="accordion-panel" data-po-type="INTERNAL">
+              <div style="display:grid; grid-template-columns: 1.25fr 1fr; gap:20px; align-items:start;">
+                <div>
+                  <table class="modal-table" style="font-size:12px; margin:0;">
+                    <tr><td style="font-weight:700;width:130px;background:#f8fafc;padding:8px 12px;">Project ID</td><td style="padding:8px 12px;">B2B2607100001</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Nama Klien</td><td style="font-weight:700;color:#2563eb;padding:8px 12px;">Alumni Kolese Jesuit</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Pesanan / Detail</td><td style="padding:8px 12px;">Seragam Batik Cap - Gold (Rp 28.020.000)</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Tanggal Cek QA</td><td style="padding:8px 12px;">12 Jul 2026</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Deskripsi Masalah</td><td style="padding:8px 12px;line-height:1.4;">Pola motif batik cap pada bagian saku depan dan kerah tidak sejajar/tidak presisi dengan pola badan baju. Pewarnaan kuning-emas (gold) juga tidak merata (shading tidak konsisten).</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Tindak Lanjut</td><td style="padding:8px 12px;line-height:1.4;">1. Pembongkaran jahitan saku dan kerah.<br>2. Pemotongan bahan baru dengan pola motif yang diselaraskan agar presisi.<br>3. Melakukan perendaman ulang kain batik cap agar sisa malam/lilin bersih sempurna.</td></tr>
+                  </table>
+                </div>
+                <div style="text-align:center;background:#f8fafc;padding:12px;border-radius:12px;border:1px solid var(--border);">
+                  <div style="font-weight:700;color:var(--text-dark);margin-bottom:8px;font-size:12px;">🖼️ Bukti Cacat Mutu (Pola Motif &amp; Warna Gold Tidak Merata):</div>
+                  <img src="asset/sla1.jpeg" alt="Detail Defect Batik Cap - Gold" style="max-width:100%;max-height:240px;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);border:1px solid var(--border);" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="accordion-header" onclick="toggleAccordion(this)" data-po-type="INTERNAL">
+              <div style="font-family:monospace;font-weight:600;">B2B2607210001</div>
+              <div style="font-weight:700;color:#2563eb;">Alumni Kolese Jesuit (Batik Cap - Navy)</div>
+              <div style="color:var(--text-dark);font-size:12.5px;">Variasi Gradasi Warna Navy Blue Dasar (Belang)</div>
+              <div><span class="status-badge cb-unresolved" style="font-size:10px;padding:2px 6px;width:100%;text-align:center;">Gagal QA</span></div>
+              <div class="accordion-arrow">▶</div>
+            </div>
+            <div class="accordion-panel" data-po-type="INTERNAL">
+              <div style="display:grid; grid-template-columns: 1.25fr 1fr; gap:20px; align-items:start;">
+                <div>
+                  <table class="modal-table" style="font-size:12px; margin:0;">
+                    <tr><td style="font-weight:700;width:130px;background:#f8fafc;padding:8px 12px;">Project ID</td><td style="padding:8px 12px;">B2B2607210001</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Nama Klien</td><td style="font-weight:700;color:#2563eb;padding:8px 12px;">Alumni Kolese Jesuit</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Pesanan / Detail</td><td style="padding:8px 12px;">Seragam Batik Cap - Navy (Rp 28.020.000)</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Tanggal Cek QA</td><td style="padding:8px 12px;">13 Jul 2026</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Deskripsi Masalah</td><td style="padding:8px 12px;line-height:1.4;">Variasi gradasi warna (color shading variation) pada kain navy blue dasar. Terdapat belang dan perbedaan kecerahan biru navy (nafy) antar gulungan kain yang sudah dicap.</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Tindak Lanjut</td><td style="padding:8px 12px;line-height:1.4;">1. Melakukan kalibrasi ulang pencampuran warna navy di workshop pewarnaan.<br>2. Produksi ulang (re-cap &amp; re-dye) gulungan kain yang tidak seragam warnanya sebelum masuk meja potong (cutting).</td></tr>
+                  </table>
+                </div>
+                <div style="text-align:center;background:#f8fafc;padding:12px;border-radius:12px;border:1px solid var(--border);">
+                  <div style="font-weight:700;color:var(--text-dark);margin-bottom:8px;font-size:12px;">🖼️ Bukti Cacat Mutu (Belang / Navy Shading Mismatch):</div>
+                  <img src="asset/sla2.jpeg" alt="Detail Defect Batik Cap - Navy" style="max-width:100%;max-height:240px;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);border:1px solid var(--border);" />
+                </div>
+              </div>
+            </div>
+          </div>
+        `
+      };
+    }
+
+    // (Initialization moved to the bottom of the script block after all datasets)
 
     // ===== GLOBAL HOVER TOOLTIP (untuk kartu, funnel, mini-stat, legend, SLA) =====
     const tip = document.getElementById('globalTooltip');
-    
+
     function tooltipEnter(e) {
       const el = e.currentTarget;
       const title = el.getAttribute('data-title') || '';
@@ -2193,7 +2752,7 @@
       tip.innerHTML = `<div class="tt-title">${title}</div><div class="tt-sub">${sub}</div>`;
       tip.classList.add('show');
     }
-    
+
     function tooltipMove(e) {
       const offset = 14;
       let x = e.clientX + offset;
@@ -2205,7 +2764,7 @@
       tip.style.left = x + 'px';
       tip.style.top = y + 'px';
     }
-    
+
     function tooltipLeave() {
       tip.classList.remove('show');
     }
@@ -2805,30 +3364,125 @@
               <tr><td>Waiting Feedback Sample</td><td>0</td><td>Sampel terkirim ke klien, menunggu umpan balik</td></tr>
               <tr><td>Proses Produksi Massal</td><td>1</td><td>Pesanan sedang diproduksi di pabrik/workshop batik</td></tr>
               <tr><td>Pengiriman Barang</td><td>0</td><td>Barang telah di-pack dan dalam perjalanan kurir</td></tr>
-              <tr><td>Selesai (Deal & Serah Terima)</td><td>5</td><td>Project tuntas, serah terima barang dan pelunasan</td></tr>
+              <tr><td>Selesai (Deal &amp; Serah Terima)</td><td>5</td><td>Project tuntas, serah terima barang dan pelunasan</td></tr>
               <tr style="font-weight:700;background:#f8fafc"><td>Total Closing Prospek</td><td>6</td><td>—</td></tr>
             </tbody>
           </table>
         `
       },
       sla_production: {
-        title: "Production SLA Detail Log",
+        title: "Log Detail Production SLA (Waktu &amp; Mutu)",
         html: `
-          <table class="modal-table">
+          <!-- Info Banner Kalkulasi SLA 6% -->
+          <div style="background:#eff6ff; border:1px solid #bfdbfe; color:#1e3a8a; padding:12px 16px; border-radius:8px; font-size:12.5px; margin-bottom:20px; line-height:1.5;">
+            <strong>ℹ️ Keterangan Kalkulasi Persentase Kendala (6%):</strong><br>
+            Persentase kendala didapatkan dari total project bermasalah dibagi total seluruh B2B project di matriks closing:<br>
+            <span style="font-family:monospace; font-weight:700; background:#dbeafe; padding:2px 6px; border-radius:4px; display:inline-block; margin-top:4px;">
+              (2 Project Bermasalah / 34 Total Project B2B) x 100% = 5.88% (dibulatkan menjadi 6%)
+            </span><br>
+            <span style="font-size:11.5px; color:#3b82f6; display:block; margin-top:4px;">
+              * 2 Project Bermasalah: <strong>B2B2607100001</strong> (Late &amp; Gagal QA) dan <strong>B2B2607210001</strong> (Gagal QA).
+            </span>
+          </div>
+
+          <!-- Filter Jenis PO -->
+          <div style="background:#f8fafc; border:1px solid var(--border); padding:10px 14px; border-radius:8px; display:flex; align-items:center; gap:10px; margin-bottom:20px;">
+            <span style="font-weight:700; font-size:12.5px; color:var(--text-dark);">Filter Jenis PO:</span>
+            <select id="poTypeFilter" onchange="filterProductionSLA(this.value)" style="padding:6px 12px; border-radius:6px; border:1px solid var(--border); font-size:12.5px; font-weight:600; background:#fff; cursor:pointer; outline:none; color:var(--text-dark);">
+              <option value="ALL">Semua Jenis PO</option>
+              <option value="INTERNAL">Internal</option>
+              <option value="VENDOR LUAR">Vendor Luar</option>
+            </select>
+          </div>
+
+          <div style="font-weight:700; color:var(--text-dark); margin-bottom:12px; font-size:14px;">1. Ketepatan Waktu Produksi (Time SLA Log)</div>
+          <table class="modal-table" style="margin-bottom:24px;">
             <thead>
               <tr>
                 <th>Project ID</th>
                 <th>Klien</th>
                 <th>Target Deadline</th>
-                <th>Tanggal Selesai</th>
-                <th>Status SLA</th>
+                <th>Tanggal Realisasi</th>
+                <th>Status SLA Waktu</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>B2B2605120003</td><td>GISPI</td><td>10 Jun 2026</td><td>08 Jun 2026</td><td><span class="status-badge sb-done">On-Time (2 Days Early)</span></td></tr>
-              <tr><td>B2B2606060005</td><td>Buana Mitra Usaha</td><td>30 Jun 2026</td><td>28 Jun 2026</td><td><span class="status-badge sb-done">On-Time</span></td></tr>
+              <tr style="background:#fffbeb;" data-po-type="INTERNAL">
+                <td>B2B2607100001</td>
+                <td>Alumni Kolese Jesuit (Batik Cap)</td>
+                <td>10 Jul 2026</td>
+                <td>— (Belum Selesai)</td>
+                <td><span class="status-badge sb-lost" style="background:#fee2e2;color:#dc2626;">Terlambat (Overdue 4 Hari)</span></td>
+              </tr>
             </tbody>
           </table>
+
+          <div style="font-weight:700; color:var(--text-dark); margin-bottom:12px; font-size:14px; padding-top:10px; border-top:1px solid var(--border);">2. Kontrol Mutu Pengerjaan (Quality QA Log)</div>
+          <div style="font-size:12px; color:var(--text-mid); margin-bottom:10px;">*Klik baris permasalahan untuk melihat detail penjelasan cacat dan bukti foto</div>
+          <div style="display:flex; flex-direction:column; gap:4px; margin-bottom:16px;">
+            <!-- Header Legend -->
+            <div style="display:grid; grid-template-columns: 120px 220px 1fr 120px 30px; padding: 8px 16px; font-size: 11px; font-weight: 700; color: var(--text-mid); text-transform: uppercase;">
+              <div>Project ID</div>
+              <div>Klien / Pesanan</div>
+              <div>Jenis Masalah Mutu (QA)</div>
+              <div>Status Mutu</div>
+              <div></div>
+            </div>
+
+            <!-- Accordion Item 1 -->
+            <div class="accordion-header" onclick="toggleAccordion(this)" data-po-type="INTERNAL">
+              <div style="font-family:monospace;font-weight:600;">B2B2607100001</div>
+              <div style="font-weight:700;color:#2563eb;">Alumni Kolese Jesuit (Batik Cap - Gold)</div>
+              <div style="color:var(--text-dark);font-size:12.5px;">Pola Motif Mismatch &amp; Pewarnaan Gold Tidak Merata</div>
+              <div><span class="status-badge cb-unresolved" style="font-size:10px;padding:2px 6px;width:100%;text-align:center;">Gagal QA</span></div>
+              <div class="accordion-arrow">▶</div>
+            </div>
+            <div class="accordion-panel" data-po-type="INTERNAL">
+              <div style="display:grid; grid-template-columns: 1.25fr 1fr; gap:20px; align-items:start;">
+                <div>
+                  <table class="modal-table" style="font-size:12px; margin:0;">
+                    <tr><td style="font-weight:700;width:130px;background:#f8fafc;padding:8px 12px;">Project ID</td><td style="padding:8px 12px;">B2B2607100001</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Nama Klien</td><td style="font-weight:700;color:#2563eb;padding:8px 12px;">Alumni Kolese Jesuit</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Pesanan / Detail</td><td style="padding:8px 12px;">Seragam Batik Cap - Gold (Rp 28.020.000)</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Tanggal Cek QA</td><td style="padding:8px 12px;">12 Jul 2026</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Deskripsi Masalah</td><td style="padding:8px 12px;line-height:1.4;">Pola motif batik cap pada bagian saku depan dan kerah tidak sejajar/tidak presisi dengan pola badan baju. Pewarnaan kuning-emas (gold) juga tidak merata (shading tidak konsisten).</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Tindak Lanjut</td><td style="padding:8px 12px;line-height:1.4;">1. Pembongkaran jahitan saku dan kerah.<br>2. Pemotongan bahan baru dengan pola motif yang diselaraskan agar presisi.<br>3. Melakukan perendaman ulang kain batik cap agar sisa malam/lilin bersih sempurna.</td></tr>
+                  </table>
+                </div>
+                <div style="text-align:center;background:#f8fafc;padding:12px;border-radius:12px;border:1px solid var(--border);">
+                  <div style="font-weight:700;color:var(--text-dark);margin-bottom:8px;font-size:12px;">🖼️ Bukti Cacat Mutu (Pola Motif &amp; Warna Gold Tidak Merata):</div>
+                  <img src="asset/sla1.jpeg" alt="Detail Defect Batik Cap - Gold" style="max-width:100%;max-height:240px;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);border:1px solid var(--border);" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="accordion-header" onclick="toggleAccordion(this)" data-po-type="VENDOR LUAR">
+              <div style="font-family:monospace;font-weight:600;">B2B2607210001</div>
+              <div style="font-weight:700;color:#2563eb;">Alumni Kolese Jesuit (Batik Cap - Navy)</div>
+              <div style="color:var(--text-dark);font-size:12.5px;">Variasi Gradasi Warna Navy Blue Dasar (Belang)</div>
+              <div><span class="status-badge cb-unresolved" style="font-size:10px;padding:2px 6px;width:100%;text-align:center;">Gagal QA</span></div>
+              <div class="accordion-arrow">▶</div>
+            </div>
+            <div class="accordion-panel" data-po-type="VENDOR LUAR">
+              <div style="display:grid; grid-template-columns: 1.25fr 1fr; gap:20px; align-items:start;">
+                <div>
+                  <table class="modal-table" style="font-size:12px; margin:0;">
+                    <tr><td style="font-weight:700;width:130px;background:#f8fafc;padding:8px 12px;">Project ID</td><td style="padding:8px 12px;">B2B2607210001</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Nama Klien</td><td style="font-weight:700;color:#2563eb;padding:8px 12px;">Alumni Kolese Jesuit</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Pesanan / Detail</td><td style="padding:8px 12px;">Seragam Batik Cap - Navy (Rp 28.020.000)</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Tanggal Cek QA</td><td style="padding:8px 12px;">13 Jul 2026</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Deskripsi Masalah</td><td style="padding:8px 12px;line-height:1.4;">Variasi gradasi warna (color shading variation) pada kain navy blue dasar. Terdapat belang dan perbedaan kecerahan biru navy (nafy) antar gulungan kain yang sudah dicap.</td></tr>
+                    <tr><td style="font-weight:700;background:#f8fafc;padding:8px 12px;">Tindak Lanjut</td><td style="padding:8px 12px;line-height:1.4;">1. Melakukan kalibrasi ulang pencampuran warna navy di workshop pewarnaan.<br>2. Produksi ulang (re-cap &amp; re-dye) gulungan kain yang tidak seragam warnanya sebelum masuk meja potong (cutting).</td></tr>
+                  </table>
+                </div>
+                <div style="text-align:center;background:#f8fafc;padding:12px;border-radius:12px;border:1px solid var(--border);">
+                  <div style="font-weight:700;color:var(--text-dark);margin-bottom:8px;font-size:12px;">🖼️ Bukti Cacat Mutu (Belang / Navy Shading Mismatch):</div>
+                  <img src="asset/sla2.jpeg" alt="Detail Defect Batik Cap - Navy" style="max-width:100%;max-height:240px;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.1);border:1px solid var(--border);" />
+                </div>
+              </div>
+            </div>
+          </div>
         `
       },
       sla_shipping: {
@@ -2849,6 +3503,73 @@
               <tr><td>B2B2606060005</td><td>Buana Mitra Usaha</td><td>05 Jul 2026</td><td>04 Jul 2026</td><td><span class="status-badge sb-done">On-Time</span></td></tr>
             </tbody>
           </table>
+        `
+      },
+      customer_complaints_log: {
+        title: "Log Lengkap Keluhan &amp; Masalah Pelanggan B2B",
+        html: `
+          <!-- Info Banner Kalkulasi Komplain 3% -->
+          <div style="background:#fff1f2; border:1px solid #fecdd3; color:#9f1239; padding:12px 16px; border-radius:8px; font-size:12.5px; margin-bottom:20px; line-height:1.5;">
+            <strong>ℹ️ Keterangan Kalkulasi Persentase Komplain (3%):</strong><br>
+            Persentase keluhan pelanggan didapatkan dari total project komplain aktif dibagi total seluruh B2B project di matriks closing:<br>
+            <span style="font-family:monospace; font-weight:700; background:#ffe4e6; padding:2px 6px; border-radius:4px; display:inline-block; margin-top:4px;">
+              (1 Project Komplain / 34 Total Project B2B) x 100% = 2.94% (dibulatkan menjadi 3%)
+            </span><br>
+            <span style="font-size:11.5px; color:#e11d48; display:block; margin-top:4px;">
+              * 1 Project Komplain: <strong>RSUD Koja</strong> (Hasil Jahit Kepanjangan).
+            </span>
+          </div>
+
+          <table class="modal-table">
+            <thead>
+              <tr>
+                <th>Klien / Project</th>
+                <th>Masalah</th>
+                <th>Tanggal Keluhan</th>
+                <th>PIC B2B</th>
+                <th>Status Keluhan</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr onclick="openDetailModal('complaint_rsud_koja')" style="cursor:pointer;" class="hover-row">
+                <td style="font-weight:700;color:#2563eb;">RSUD Koja</td>
+                <td>Hasil Jahit (Kepanjangan)</td>
+                <td>14 Jul 2026</td>
+                <td><span class="status-badge" style="background:#fce7f3;color:#9d174d;">VIRA</span></td>
+                <td><span class="status-badge cb-unresolved">Proses Perbaikan</span></td>
+                <td><button class="status-badge cb-unresolved" style="border:none;cursor:pointer;">Lihat Detail →</button></td>
+              </tr>
+            </tbody>
+          </table>
+        `
+      },
+      complaint_rsud_koja: {
+        title: "Detail Keluhan Klien: RSUD Koja",
+        html: `
+          <div style="display:grid; grid-template-columns: 1.2fr 1fr; gap:20px; align-items:start;">
+            <div>
+              <table class="modal-table" style="margin-bottom:16px;">
+                <tr><td style="font-weight:700;width:120px;">Project ID</td><td>B2B2607290001</td></tr>
+                <tr><td style="font-weight:700;">Nama Klien</td><td style="font-weight:700;color:#2563eb;">RSUD Koja</td></tr>
+                <tr><td style="font-weight:700;">Tanggal Keluhan</td><td>14 Jul 2026</td></tr>
+                <tr><td style="font-weight:700;">PIC B2B Sales</td><td>Vira</td></tr>
+                <tr><td style="font-weight:700;">Status Keluhan</td><td><span class="status-badge cb-unresolved">Proses Perbaikan</span></td></tr>
+                <tr><td style="font-weight:700;">Deskripsi Masalah</td><td>Terkait hasil jahit baju tunik yang kepanjangan. Hasil jahit ini disebabkan adanya miskomunikasi antara pihak customer dengan Business Development (BD) Batik Trusmi. Meskipun size chart sudah diberikan sebelumnya kepada customer dan disetujui, saat barang jadi dinilai terlalu panjang oleh customer.</td></tr>
+                <tr><td style="font-weight:700;">Tindak Lanjut (Rencana)</td><td>1. Mengambil kembali 10 pcs baju tunik yang kepanjangan untuk diperbaiki.<br>2. Melakukan perbaikan berupa pemotongan dan kelim ulang panjang tunik di workshop internal Batik Trusmi.<br>3. Melakukan double check pemahaman spesifikasi size chart sebelum produksi massal berikutnya untuk menghindari miskomunikasi.<br>4. Memberikan CCP kelalaian kepada Business Development (BD) terkait atas kelalaian miskomunikasi spesifikasi size chart dengan customer.</td></tr>
+              </table>
+            </div>
+            <div style="text-align:center;background:#f8fafc;padding:16px;border-radius:12px;border:1px solid var(--border);">
+              <div style="font-weight:700;color:var(--text-dark);margin-bottom:12px;font-size:13px;">🖼️ Bukti Complaint (Foto Tunik Kepanjangan):</div>
+              <img src="asset/comlain1.jpeg" alt="Bukti Tunik Kepanjangan" style="max-width:100%;max-height:280px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1);border:1px solid var(--border);" />
+              <div style="font-size:11px;color:var(--text-mid);margin-top:6px;font-style:italic;">Foto Cacat Seragam Batik RSUD Koja</div>
+            </div>
+          </div>
+          <div style="margin-top:16px;display:flex;justify-content:flex-end;">
+            <button onclick="openDetailModal('customer_complaints_log')" style="background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;border-radius:6px;padding:6px 12px;font-size:12.5px;font-weight:600;cursor:pointer;transition:background 0.15s;" onmouseover="this.style.background='#e2e8f0'" onmouseout="this.style.background='#f1f5f9'">
+              ← Kembali ke Log Keluhan
+            </button>
+          </div>
         `
       }
     };
@@ -2926,7 +3647,7 @@
           let badgeClass = 'sb-pending';
           if (l.note.toLowerCase().includes('lunas')) badgeClass = 'sb-done';
           if (l.note.toLowerCase().includes('piutang')) badgeClass = 'sb-lost';
-          
+
           tableRows += `
             <tr>
               <td>${l.bulan}</td>
@@ -2981,7 +3702,7 @@
       let pct = 0;
       let steps = [];
       const cleanStatus = (status || '').toUpperCase().trim();
-      
+
       switch (cleanStatus) {
         case 'DONE PENGIRIMAN':
           pct = 100;
@@ -3038,12 +3759,12 @@
     function openProjectDetailFromAll(klienName) {
       const p = allProjectsData.find(proj => proj.klien === klienName);
       if (!p) return;
-      
+
       const m = monitorData.find(md => md.sub.toLowerCase().includes(p.klien.toLowerCase()) || p.klien.toLowerCase().includes(md.sub.toLowerCase()));
-      const code = m ? m.code : 'B2B-PROJ-' + p.klien.substring(0,3).toUpperCase();
-      
+      const code = m ? m.code : 'B2B-PROJ-' + p.klien.substring(0, 3).toUpperCase();
+
       const { pct } = getProjectProgressInfo(p.status);
-      
+
       openProjectDetailModal(code, p.klien, pct, p.status, true);
     }
 
@@ -3068,17 +3789,17 @@
       };
 
       // Find the project object in allProjectsData
-      const p = allProjectsData.find(proj => 
-        sub.toLowerCase().includes(proj.klien.toLowerCase()) || 
+      const p = allProjectsData.find(proj =>
+        sub.toLowerCase().includes(proj.klien.toLowerCase()) ||
         proj.klien.toLowerCase().includes(sub.toLowerCase())
       );
 
       const statusColorMap = {
-        'DONE PENGIRIMAN':              { bg: '#dcfce7', color: '#15803d' },
-        'ON PROGRESS PRODUKSI MASSAL':  { bg: '#dbeafe', color: '#1d4ed8' },
-        'ON PROGRESS SAMPLE':           { bg: '#ede9fe', color: '#6d28d9' },
-        'WAITING FEEDBACK CUST':        { bg: '#fef9c3', color: '#92400e' },
-        'LATE (MUNDUR)':                { bg: '#fee2e2', color: '#dc2626' },
+        'DONE PENGIRIMAN': { bg: '#dcfce7', color: '#15803d' },
+        'ON PROGRESS PRODUKSI MASSAL': { bg: '#dbeafe', color: '#1d4ed8' },
+        'ON PROGRESS SAMPLE': { bg: '#ede9fe', color: '#6d28d9' },
+        'WAITING FEEDBACK CUST': { bg: '#fef9c3', color: '#92400e' },
+        'LATE (MUNDUR)': { bg: '#fee2e2', color: '#dc2626' },
       };
 
       let steps = milestones[code];
@@ -3187,56 +3908,56 @@
 
     // ===== FULL PROJECT MONITORING MODAL (ALL 34 ENTRIES) =====
     const allProjectsData = [
-      { klien: 'Ohana\'s Resort',           detail: 'Seragam',                     pic: 'AKBAR',    status: 'WAITING FEEDBACK CUST',        due: '18/7/2026',  sales: 'Rp 5.945.000',     purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Proses pengiriman Sampel ke Client' },
-      { klien: 'Bluebird Driver',           detail: 'Sample proofing',             pic: 'BU ERA',   status: 'WAITING FEEDBACK CUST',        due: '-',          sales: 'Rp 900.000.000',   purchPIC: 'BU EHA',  jenis: 'VENDOR LUAR',  notes: 'Waiting feedback cust' },
-      { klien: 'Bpk Achmad Azran (DPD RI)',  detail: 'Seragam batik',               pic: 'BU ERA',   status: 'WAITING FEEDBACK CUST',        due: '-',          sales: 'Rp 10.000.000',    purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Waiting size list dari customer' },
-      { klien: 'Sanqua',                    detail: 'Seragam Sanqua 446 pcs',      pic: 'BU ERA',   status: 'LATE (MUNDUR)',                 due: '6/7/2026',   sales: 'Rp 140.000.000',   purchPIC: 'ALFIAN',  jenis: 'VENDOR LUAR',  notes: 'On process – dikirim 186 pcs, kekurangan 238 pcs' },
-      { klien: 'Stikep PPNI Bandung',       detail: 'Seragam Batik',               pic: 'BU ERA',   status: 'ON PROGRESS PRODUKSI MASSAL',  due: '8/8/2026',   sales: 'Rp 70.000.000',    purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Progress: Proses jahit' },
-      { klien: 'Kukubima',                  detail: 'HEM oversize 1500 pcs',       pic: 'BU ERA',   status: 'ON PROGRESS PRODUKSI MASSAL',  due: '8/8/2026',   sales: 'Rp 289.500.000',   purchPIC: 'ALFIAN',  jenis: 'VENDOR LUAR',  notes: 'Proses FA selesai 13/7. Kain masuk 27/6. Estimasi 45 hari kerja. Perlu opsi kirim parsial.' },
-      { klien: 'RSU Aisyiyah Padang',       detail: 'Kemeja & Tunik',              pic: 'BU ERA',   status: 'ON PROGRESS PRODUKSI MASSAL',  due: '2/7/2026',   sales: 'Rp 30.442.000',    purchPIC: 'ANISAH',  jenis: 'INTERNAL',     notes: 'Baju reject 27 pcs done dikirim – done transaksi' },
-      { klien: 'Ibu Epita – PNS Bengkulu',  detail: 'Sampel kain batik',           pic: 'BU ERA',   status: 'ON PROGRESS SAMPLE',           due: '5/6/2026',   sales: 'Rp 274.000',       purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Done dikirim dan sampel sudah ditransaksi' },
-      { klien: 'Bluebird Training',         detail: 'Sample baju jadi 2 pcs',      pic: 'BU ERA',   status: 'ON PROGRESS SAMPLE',           due: '20/5/2026',  sales: 'Rp 175.000.000',   purchPIC: 'BU EHA',  jenis: 'VENDOR LUAR',  notes: 'Hasil sample jahit tidak rapih – buat ulang' },
-      { klien: 'Ibu Elis',                  detail: 'Seragam batik',               pic: 'BU ERA',   status: 'DONE PENGIRIMAN',              due: '27/6/2026',  sales: 'Rp 1.778.000',     purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Done pengiriman dan transaksi' },
-      { klien: 'PLN ULP Indramayu',         detail: 'Seragam batik',               pic: 'BU ERA',   status: 'DONE PENGIRIMAN',              due: '15/7/2026',  sales: 'Rp 2.037.750',     purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Done pengiriman dan transaksi' },
-      { klien: 'Sucofindo',                 detail: 'Seragam Batik',               pic: 'BU ERA',   status: 'ON PROGRESS SAMPLE',           due: '2/7/2026',   sales: 'Rp 14.430.000',    purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Menunggu feedback sample batik / celana selesai produksi' },
-      { klien: 'Multisari Indoprima',       detail: 'Batik',                       pic: 'BU ERA',   status: 'ON PROGRESS SAMPLE',           due: '17/7/2026',  sales: 'Rp 23.024.176',    purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Sampel kemungkinan late karena menunggu frame plangkan dari Pekalongan' },
-      { klien: 'Batik Pak Basuki',          detail: 'Batik',                       pic: 'BU ERA',   status: 'ON PROGRESS SAMPLE',           due: '15/7/2026',  sales: 'Rp 425.000',       purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Sample done dikirim, waiting feedback' },
-      { klien: 'PT Sailun Tire',            detail: 'Batik 37 pcs',                pic: 'BU ERA',   status: 'ON PROGRESS PRODUKSI MASSAL',  due: '22/7/2026',  sales: 'Rp 16.339.200',    purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Sampel done dikirim, waiting feedback. Bahan baku eksternal – jahit internal' },
-      { klien: 'LPM Univ Al Azhar Indo',   detail: 'Batik',                       pic: 'BU ERA',   status: 'ON PROGRESS SAMPLE',           due: '17/7/2026',  sales: 'Rp 1.974.000',     purchPIC: 'ALFIAN',  jenis: 'VENDOR LUAR',  notes: 'Proses di vendor / jahit eksternal' },
-      { klien: 'GISPI Majalengka',          detail: 'Seragam 207 pcs',             pic: 'HANUM',    status: 'DONE PENGIRIMAN',              due: '-',          sales: 'Rp 34.983.000',    purchPIC: 'ALFIAN',  jenis: 'VENDOR LUAR',  notes: 'Done pengiriman dan transaksi' },
-      { klien: 'PTPDI',                     detail: 'Seragam pria dan wanita',     pic: 'HANUM',    status: 'ON PROGRESS PRODUKSI MASSAL',  due: '-',          sales: 'Rp 40.000.000',    purchPIC: 'ALFIAN',  jenis: 'VENDOR LUAR',  notes: 'Form PO massal pria & sample wanita sudah di-share. Menunggu timeline produksi. Bahan baku eksternal.' },
-      { klien: 'Hotel Classic Jakarta',     detail: 'Seragam kitchen & resto',     pic: 'HANUM',    status: 'LATE (MUNDUR)',                 due: '20/6/2026',  sales: 'Rp 12.200.000',    purchPIC: 'FIORIE',  jenis: 'INTERNAL',     notes: 'Sample revisi dikirim ke BT, ada perbaikan di list. Masih ada revisi & bahan baku kurang.' },
-      { klien: 'UM Bandung',                detail: 'Seragam batik (kemeja 16 + bls 40)', pic: 'HANUM', status: 'ON PROGRESS SAMPLE',      due: '22/7/2026',  sales: 'Rp 12.104.000',    purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Proses pembuatan kain di handprinting' },
-      { klien: 'SMP SMART AULADI',          detail: 'Non batik',                   pic: 'HANUM',    status: 'ON PROGRESS PRODUKSI MASSAL',  due: '8/7/2026',   sales: 'Rp 13.200.000',    purchPIC: 'RIJAL',   jenis: 'VENDOR LUAR',  notes: 'Kurang tunik 3 pcs & kemeja 9 pcs, masih proses treatment pembersihan noda di SCM' },
-      { klien: 'Generasi Ahad',             detail: 'Seragam TK, SD, SMP',         pic: 'HANUM',    status: 'ON PROGRESS SAMPLE',           due: '16/7/2026',  sales: 'Rp 79.240.000',    purchPIC: 'FIORIE',  jenis: 'VENDOR LUAR',  notes: 'Pesanan SD & SMP done. Bawahan TK parsial, atasan masih proses jahit. Duedate kirim Kamis 16 Juli.' },
-      { klien: 'GISPI (Repeat 1) siswa & guru', detail: 'Batik',                  pic: 'HANUM',    status: 'ON PROGRESS PRODUKSI MASSAL',  due: '18/7/2026',  sales: 'Rp 16.081.000',    purchPIC: 'FIORIE',  jenis: 'VENDOR LUAR',  notes: 'Batik siswa: proses jahit di vendor. Batik guru: done dikirim.' },
-      { klien: 'Buana Mitra Parking',       detail: 'Batik dan non batik',         pic: 'HANUM',    status: 'WAITING FEEDBACK CUST',        due: '18/7/2026',  sales: 'Rp 10.620.000',    purchPIC: 'RIJAL',   jenis: 'INTERNAL',     notes: 'Menunggu feedback opsi warna batik, FU Senin' },
-      { klien: 'THUFULAH',                  detail: 'Batik',                       pic: 'HANUM',    status: 'ON PROGRESS SAMPLE',           due: '22/7/2026',  sales: 'Rp 8.500.000',     purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Proses afdruk' },
-      { klien: 'RS Duta Mulya',             detail: 'Kain Batik',                  pic: 'TANTO',    status: 'ON PROGRESS SAMPLE',           due: '8/7/2026',   sales: 'Rp 7.000.000',     purchPIC: 'LUTHFI',  jenis: 'INTERNAL',     notes: 'Motif daun asam selesai dikirim. Motif Bunga Lily masih proses sablon.' },
-      { klien: 'Bank SBI',                  detail: 'Seragam Frontline',           pic: 'TANTO',    status: 'ON PROGRESS PRODUKSI MASSAL',  due: '6/8/2026',   sales: 'Rp 40.936.800',    purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Kirim ke masing-masing branch menunggu seluruh produk selesai' },
-      { klien: 'Alumni Kolese Jesuit',      detail: 'Seragam Batik Cap',           pic: 'TANTO',    status: 'ON PROGRESS SAMPLE',           due: '10/7/2026',  sales: 'Rp 28.020.000',    purchPIC: 'FIRMAN',  jenis: 'INTERNAL',     notes: 'Progress: Proses produksi kain' },
-      { klien: 'Alumni Kolese Jesuit',      detail: 'Kipas',                       pic: 'TANTO',    status: 'ON PROGRESS SAMPLE',           due: '20/7/2026',  sales: 'Rp 7.800.000',     purchPIC: 'FIRMAN',  jenis: 'VENDOR LUAR',  notes: 'Progress: Proses produksi kain di vendor' },
-      { klien: 'Alumni Kolese Jesuit',      detail: 'Seragam Batik Digital',       pic: 'TANTO',    status: 'ON PROGRESS SAMPLE',           due: '21/7/2026',  sales: 'Rp 27.404.000',    purchPIC: 'FIRMAN',  jenis: 'VENDOR LUAR',  notes: 'Progress: Proses design FA' },
-      { klien: 'Riverzone',                 detail: 'Dres batik',                  pic: 'VIRA',     status: 'ON PROGRESS PRODUKSI MASSAL',  due: '2/7/2026',   sales: 'Rp 895.000',       purchPIC: 'ALFIAN',  jenis: 'INTERNAL',     notes: 'Done dikirim dan transaksi' },
-      { klien: 'RSUD Koja',                 detail: 'Perbaikan tunik 10 pcs',      pic: 'VIRA',     status: 'ON PROGRESS PRODUKSI MASSAL',  due: '29/6/2026',  sales: 'Rp 17.815.000',    purchPIC: 'FIORIE',  jenis: 'VENDOR LUAR',  notes: 'Ada reject 10 tunik, perbaikan dilakukan di internal' },
-      { klien: 'SDN Cipinang Melayu',       detail: 'Seragam',                     pic: 'YASHINTA', status: 'ON PROGRESS SAMPLE',           due: '18/7/2026',  sales: 'Rp 7.850.000',     purchPIC: 'RIJAL',   jenis: 'INTERNAL',     notes: 'Proses print A0' },
+      { klien: 'Ohana\'s Resort', detail: 'Seragam', pic: 'AKBAR', status: 'WAITING FEEDBACK CUST', due: '18/7/2026', sales: 'Rp 5.945.000', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Proses pengiriman Sampel ke Client' },
+      { klien: 'Bluebird Driver', detail: 'Sample proofing', pic: 'BU ERA', status: 'WAITING FEEDBACK CUST', due: '-', sales: 'Rp 900.000.000', purchPIC: 'BU EHA', jenis: 'VENDOR LUAR', notes: 'Waiting feedback cust' },
+      { klien: 'Bpk Achmad Azran (DPD RI)', detail: 'Seragam batik', pic: 'BU ERA', status: 'WAITING FEEDBACK CUST', due: '-', sales: 'Rp 10.000.000', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Waiting size list dari customer' },
+      { klien: 'Sanqua', detail: 'Seragam Sanqua 446 pcs', pic: 'BU ERA', status: 'LATE (MUNDUR)', due: '6/7/2026', sales: 'Rp 140.000.000', purchPIC: 'ALFIAN', jenis: 'VENDOR LUAR', notes: 'On process – dikirim 186 pcs, kekurangan 238 pcs' },
+      { klien: 'Stikep PPNI Bandung', detail: 'Seragam Batik', pic: 'BU ERA', status: 'ON PROGRESS PRODUKSI MASSAL', due: '8/8/2026', sales: 'Rp 70.000.000', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Progress: Proses jahit' },
+      { klien: 'Kukubima', detail: 'HEM oversize 1500 pcs', pic: 'BU ERA', status: 'ON PROGRESS PRODUKSI MASSAL', due: '8/8/2026', sales: 'Rp 289.500.000', purchPIC: 'ALFIAN', jenis: 'VENDOR LUAR', notes: 'Proses FA selesai 13/7. Kain masuk 27/6. Estimasi 45 hari kerja. Perlu opsi kirim parsial.' },
+      { klien: 'RSU Aisyiyah Padang', detail: 'Kemeja & Tunik', pic: 'BU ERA', status: 'ON PROGRESS PRODUKSI MASSAL', due: '2/7/2026', sales: 'Rp 30.442.000', purchPIC: 'ANISAH', jenis: 'INTERNAL', notes: 'Baju reject 27 pcs done dikirim – done transaksi' },
+      { klien: 'Ibu Epita – PNS Bengkulu', detail: 'Sampel kain batik', pic: 'BU ERA', status: 'ON PROGRESS SAMPLE', due: '5/6/2026', sales: 'Rp 274.000', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Done dikirim dan sampel sudah ditransaksi' },
+      { klien: 'Bluebird Training', detail: 'Sample baju jadi 2 pcs', pic: 'BU ERA', status: 'ON PROGRESS SAMPLE', due: '20/5/2026', sales: 'Rp 175.000.000', purchPIC: 'BU EHA', jenis: 'VENDOR LUAR', notes: 'Hasil sample jahit tidak rapih – buat ulang' },
+      { klien: 'Ibu Elis', detail: 'Seragam batik', pic: 'BU ERA', status: 'DONE PENGIRIMAN', due: '27/6/2026', sales: 'Rp 1.778.000', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Done pengiriman dan transaksi' },
+      { klien: 'PLN ULP Indramayu', detail: 'Seragam batik', pic: 'BU ERA', status: 'DONE PENGIRIMAN', due: '15/7/2026', sales: 'Rp 2.037.750', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Done pengiriman dan transaksi' },
+      { klien: 'Sucofindo', detail: 'Seragam Batik', pic: 'BU ERA', status: 'ON PROGRESS SAMPLE', due: '2/7/2026', sales: 'Rp 14.430.000', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Menunggu feedback sample batik / celana selesai produksi' },
+      { klien: 'Multisari Indoprima', detail: 'Batik', pic: 'BU ERA', status: 'ON PROGRESS SAMPLE', due: '17/7/2026', sales: 'Rp 23.024.176', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Sampel kemungkinan late karena menunggu frame plangkan dari Pekalongan' },
+      { klien: 'Batik Pak Basuki', detail: 'Batik', pic: 'BU ERA', status: 'ON PROGRESS SAMPLE', due: '15/7/2026', sales: 'Rp 425.000', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Sample done dikirim, waiting feedback' },
+      { klien: 'PT Sailun Tire', detail: 'Batik 37 pcs', pic: 'BU ERA', status: 'ON PROGRESS PRODUKSI MASSAL', due: '22/7/2026', sales: 'Rp 16.339.200', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Sampel done dikirim, waiting feedback. Bahan baku eksternal – jahit internal' },
+      { klien: 'LPM Univ Al Azhar Indo', detail: 'Batik', pic: 'BU ERA', status: 'ON PROGRESS SAMPLE', due: '17/7/2026', sales: 'Rp 1.974.000', purchPIC: 'ALFIAN', jenis: 'VENDOR LUAR', notes: 'Proses di vendor / jahit eksternal' },
+      { klien: 'GISPI Majalengka', detail: 'Seragam 207 pcs', pic: 'HANUM', status: 'DONE PENGIRIMAN', due: '-', sales: 'Rp 34.983.000', purchPIC: 'ALFIAN', jenis: 'VENDOR LUAR', notes: 'Done pengiriman dan transaksi' },
+      { klien: 'PTPDI', detail: 'Seragam pria dan wanita', pic: 'HANUM', status: 'ON PROGRESS PRODUKSI MASSAL', due: '-', sales: 'Rp 40.000.000', purchPIC: 'ALFIAN', jenis: 'VENDOR LUAR', notes: 'Form PO massal pria & sample wanita sudah di-share. Menunggu timeline produksi. Bahan baku eksternal.' },
+      { klien: 'Hotel Classic Jakarta', detail: 'Seragam kitchen & resto', pic: 'HANUM', status: 'LATE (MUNDUR)', due: '20/6/2026', sales: 'Rp 12.200.000', purchPIC: 'FIORIE', jenis: 'INTERNAL', notes: 'Sample revisi dikirim ke BT, ada perbaikan di list. Masih ada revisi & bahan baku kurang.' },
+      { klien: 'UM Bandung', detail: 'Seragam batik (kemeja 16 + bls 40)', pic: 'HANUM', status: 'ON PROGRESS SAMPLE', due: '22/7/2026', sales: 'Rp 12.104.000', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Proses pembuatan kain di handprinting' },
+      { klien: 'SMP SMART AULADI', detail: 'Non batik', pic: 'HANUM', status: 'ON PROGRESS PRODUKSI MASSAL', due: '8/7/2026', sales: 'Rp 13.200.000', purchPIC: 'RIJAL', jenis: 'VENDOR LUAR', notes: 'Kurang tunik 3 pcs & kemeja 9 pcs, masih proses treatment pembersihan noda di SCM' },
+      { klien: 'Generasi Ahad', detail: 'Seragam TK, SD, SMP', pic: 'HANUM', status: 'ON PROGRESS SAMPLE', due: '16/7/2026', sales: 'Rp 79.240.000', purchPIC: 'FIORIE', jenis: 'VENDOR LUAR', notes: 'Pesanan SD & SMP done. Bawahan TK parsial, atasan masih proses jahit. Duedate kirim Kamis 16 Juli.' },
+      { klien: 'GISPI (Repeat 1) siswa & guru', detail: 'Batik', pic: 'HANUM', status: 'ON PROGRESS PRODUKSI MASSAL', due: '18/7/2026', sales: 'Rp 16.081.000', purchPIC: 'FIORIE', jenis: 'VENDOR LUAR', notes: 'Batik siswa: proses jahit di vendor. Batik guru: done dikirim.' },
+      { klien: 'Buana Mitra Parking', detail: 'Batik dan non batik', pic: 'HANUM', status: 'WAITING FEEDBACK CUST', due: '18/7/2026', sales: 'Rp 10.620.000', purchPIC: 'RIJAL', jenis: 'INTERNAL', notes: 'Menunggu feedback opsi warna batik, FU Senin' },
+      { klien: 'THUFULAH', detail: 'Batik', pic: 'HANUM', status: 'ON PROGRESS SAMPLE', due: '22/7/2026', sales: 'Rp 8.500.000', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Proses afdruk' },
+      { klien: 'RS Duta Mulya', detail: 'Kain Batik', pic: 'TANTO', status: 'ON PROGRESS SAMPLE', due: '8/7/2026', sales: 'Rp 7.000.000', purchPIC: 'LUTHFI', jenis: 'INTERNAL', notes: 'Motif daun asam selesai dikirim. Motif Bunga Lily masih proses sablon.' },
+      { klien: 'Bank SBI', detail: 'Seragam Frontline', pic: 'TANTO', status: 'ON PROGRESS PRODUKSI MASSAL', due: '6/8/2026', sales: 'Rp 40.936.800', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Kirim ke masing-masing branch menunggu seluruh produk selesai' },
+      { klien: 'Alumni Kolese Jesuit', detail: 'Seragam Batik Cap (Gold)', pic: 'TANTO', status: 'ON PROGRESS SAMPLE', due: '10/7/2026', sales: 'Rp 28.020.000', purchPIC: 'FIRMAN', jenis: 'INTERNAL', notes: 'Progress: Proses produksi kain' },
+      { klien: 'Alumni Kolese Jesuit', pic: 'TANTO', status: 'ON PROGRESS SAMPLE', due: '20/7/2026', sales: 'Rp 7.800.000', purchPIC: 'FIRMAN', jenis: 'VENDOR LUAR', notes: 'Progress: Proses produksi kain di vendor', detail: 'Kipas' },
+      { klien: 'Alumni Kolese Jesuit', detail: 'Seragam Batik Cap (Navy)', pic: 'TANTO', status: 'ON PROGRESS SAMPLE', due: '21/7/2026', sales: 'Rp 28.020.000', purchPIC: 'FIRMAN', jenis: 'INTERNAL', notes: 'Progress: Proses design FA' },
+      { klien: 'Riverzone', detail: 'Dres batik', pic: 'VIRA', status: 'ON PROGRESS PRODUKSI MASSAL', due: '2/7/2026', sales: 'Rp 895.000', purchPIC: 'ALFIAN', jenis: 'INTERNAL', notes: 'Done dikirim dan transaksi' },
+      { klien: 'RSUD Koja', detail: 'Perbaikan tunik 10 pcs', pic: 'VIRA', status: 'ON PROGRESS PRODUKSI MASSAL', due: '29/6/2026', sales: 'Rp 17.815.000', purchPIC: 'FIORIE', jenis: 'VENDOR LUAR', notes: 'Ada reject 10 tunik, perbaikan dilakukan di internal' },
+      { klien: 'SDN Cipinang Melayu', detail: 'Seragam', pic: 'YASHINTA', status: 'ON PROGRESS SAMPLE', due: '18/7/2026', sales: 'Rp 7.850.000', purchPIC: 'RIJAL', jenis: 'INTERNAL', notes: 'Proses print A0' },
     ];
 
     function openAllProjectsModal() {
       const _modal = document.getElementById('detailsModal');
       const _title = document.getElementById('modalTitle');
-      const _body  = document.getElementById('modalBody');
+      const _body = document.getElementById('modalBody');
       if (!_modal || !_title || !_body) {
         alert('Modal belum siap, coba refresh halaman.');
         return;
       }
 
       const statusColor = {
-        'DONE PENGIRIMAN':              { bg: '#dcfce7', color: '#15803d' },
-        'ON PROGRESS PRODUKSI MASSAL':  { bg: '#dbeafe', color: '#1d4ed8' },
-        'ON PROGRESS SAMPLE':           { bg: '#ede9fe', color: '#6d28d9' },
-        'WAITING FEEDBACK CUST':        { bg: '#fef9c3', color: '#92400e' },
-        'LATE (MUNDUR)':                { bg: '#fee2e2', color: '#dc2626' },
+        'DONE PENGIRIMAN': { bg: '#dcfce7', color: '#15803d' },
+        'ON PROGRESS PRODUKSI MASSAL': { bg: '#dbeafe', color: '#1d4ed8' },
+        'ON PROGRESS SAMPLE': { bg: '#ede9fe', color: '#6d28d9' },
+        'WAITING FEEDBACK CUST': { bg: '#fef9c3', color: '#92400e' },
+        'LATE (MUNDUR)': { bg: '#fee2e2', color: '#dc2626' },
       };
 
       const summary = {};
@@ -3302,6 +4023,19 @@
     const modalBody = document.getElementById('modalBody');
     const modalCloseBtn = document.getElementById('modalCloseBtn');
 
+    // Function to Toggle Accordion Panels inside modals
+    function toggleAccordion(header) {
+      header.classList.toggle('active');
+      const panel = header.nextElementSibling;
+      const arrow = header.querySelector('.accordion-arrow');
+
+      const isExpanded = panel.style.display === 'block';
+      panel.style.display = isExpanded ? 'none' : 'block';
+      if (arrow) {
+        arrow.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(90deg)';
+      }
+    }
+
     // Function to Open Modal with specific key
     function openDetailModal(key) {
       const data = detailData[key];
@@ -3310,6 +4044,12 @@
       modalTitle.innerText = data.title;
       modalBody.innerHTML = data.html;
       detailsModal.classList.add('show');
+
+      // Reset filter dropdown to ALL if it exists
+      const filterSelect = document.getElementById('poTypeFilter');
+      if (filterSelect) {
+        filterSelect.value = 'ALL';
+      }
     }
 
     // Function to Close Modal
@@ -3319,7 +4059,7 @@
 
     // Event listeners for close
     modalCloseBtn.addEventListener('click', closeDetailModal);
-    
+
     // Close when clicking overlay backdrop
     detailsModal.addEventListener('click', (e) => {
       if (e.target === detailsModal) {
@@ -3341,6 +4081,84 @@
         openDetailModal(key);
       });
     });
+
+    // Function to filter Production SLA modal content by Jenis PO (Internal vs Vendor Luar)
+    window.filterProductionSLA = function(poType) {
+      // 1. Filter rows in Time SLA Log table
+      const rows = document.querySelectorAll('#detailsModal table tbody tr[data-po-type]');
+      rows.forEach(row => {
+        const type = row.getAttribute('data-po-type');
+        if (poType === 'ALL' || type === poType) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      // 2. Filter accordion headers in Quality QA Log
+      const headers = document.querySelectorAll('#detailsModal .accordion-header[data-po-type]');
+      headers.forEach(header => {
+        const type = header.getAttribute('data-po-type');
+        const panel = header.nextElementSibling;
+        const arrow = header.querySelector('.accordion-arrow');
+
+        if (poType === 'ALL' || type === poType) {
+          header.style.display = '';
+        } else {
+          header.style.display = 'none';
+          // Hide panel when header is hidden
+          if (panel && panel.classList.contains('accordion-panel')) {
+            panel.style.display = 'none';
+          }
+          if (arrow) {
+            arrow.style.transform = 'rotate(0deg)';
+          }
+          header.classList.remove('active');
+        }
+      });
+
+      // 3. Dynamic card highlighting and opacity dimming per PO Type selection
+      const cardInternal = document.getElementById('cardSlaInternal');
+      const cardVendor = document.getElementById('cardSlaVendor');
+      const cardTotal = document.getElementById('cardSlaTotal');
+
+      if (cardInternal && cardVendor && cardTotal) {
+        // Reset styles to default dim
+        [cardInternal, cardVendor, cardTotal].forEach(card => {
+          card.style.opacity = '0.5';
+          card.style.backgroundColor = '#fff';
+          card.style.boxShadow = 'none';
+        });
+
+        // Apply active highlights based on selected filter
+        if (poType === 'ALL') {
+          cardTotal.style.opacity = '1';
+          cardTotal.style.borderColor = '#3b82f6';
+          cardTotal.style.backgroundColor = '#eff6ff';
+          cardTotal.style.boxShadow = '0 3px 10px rgba(59,130,246,0.15)';
+          cardInternal.style.borderColor = '#bfdbfe';
+          cardVendor.style.borderColor = '#bae6fd';
+        } else if (poType === 'INTERNAL') {
+          cardInternal.style.opacity = '1';
+          cardInternal.style.borderColor = '#2563eb';
+          cardInternal.style.backgroundColor = '#eff6ff';
+          cardInternal.style.boxShadow = '0 3px 10px rgba(37,99,235,0.15)';
+          cardVendor.style.borderColor = '#bae6fd';
+          cardTotal.style.borderColor = '#cbd5e1';
+        } else if (poType === 'VENDOR LUAR') {
+          cardVendor.style.opacity = '1';
+          cardVendor.style.borderColor = '#0284c7';
+          cardVendor.style.backgroundColor = '#f0f9ff';
+          cardVendor.style.boxShadow = '0 3px 10px rgba(2,132,199,0.15)';
+          cardInternal.style.borderColor = '#bfdbfe';
+          cardTotal.style.borderColor = '#cbd5e1';
+        }
+      }
+    };
+
+    // Initialize dynamic SLA charts and content (all datasets are fully declared here)
+    initProductionSLA();
+    makeRing('complaintRing', Math.round((1 / 34) * 100), '#e11d48');
   </script>
 </body>
 
